@@ -18,8 +18,20 @@ extension Date {
     }
     
     func travelToFuture(years: Int) -> String? {
+        let currentDate = self
+        
+        var dateComponents = DateComponents()
+        dateComponents.year = years
+        
+        let futureDate = Calendar.current.date(byAdding: dateComponents, to: currentDate)
      
-        // TODO
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        
+        if let futureDate {
+            return dateFormatter.string(from: futureDate)
+        }
+        
         return nil
     }
 }
