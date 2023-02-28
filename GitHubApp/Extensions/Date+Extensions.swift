@@ -10,7 +10,7 @@ extension Date {
         let date = dateFormatter.date(from: dateString)
         
         if let date {
-            dateFormatter.dateStyle = .short
+            dateFormatter.dateFormat = "dd/MM/yyyy"
             return dateFormatter.string(from: date)
         }
         
@@ -26,7 +26,7 @@ extension Date {
         let futureDate = Calendar.current.date(byAdding: dateComponents, to: currentDate)
      
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
+        dateFormatter.dateFormat = "dd/MM/yyyy"
         
         if let futureDate {
             return dateFormatter.string(from: futureDate)
